@@ -172,7 +172,7 @@ jobs:
           VERSION: ${{ steps.time.outputs.time }}-development
           ###### EDIT HERE ######
           KERNEL: "linux510"
-          CODE_NAME: "Nocta"
+          CODE_NAME: "Community-build"
           #######################
         run: |                
           [ "$SCOPE" == "minimal" ] && unset SCOPE
