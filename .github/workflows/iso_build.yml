@@ -177,10 +177,10 @@ jobs:
         run: |                
           [ "$SCOPE" == "minimal" ] && unset SCOPE
                     
-          sudo sed -i -e 's|dist_name=$(get_distname)|dist_name=Manjaro_Nocta|g' /usr/lib/manjaro-tools/util.sh
+          sudo sed -i -e 's|dist_name=$(get_distname)|dist_name=Manjaro Nocta|g' /usr/lib/manjaro-tools/util.sh
           sudo sed -i -e 's|iso_name=$(get_osid)|iso_name=manjaro|g' /usr/lib/manjaro-tools/util.sh
           sudo sed -i -e "s|build_mirror='https://manjaro.moson.eu'|build_mirror='https://mirror.easyname.at/manjaro'|g" /usr/lib/manjaro-tools/util.sh
-          sudo sed -i -e "s|dist_release=\$(get_release)|dist_release=$VERSION|g" /usr/lib/manjaro-tools/util.sh
+          sudo sed -i -e "s|dist_release=\$(get_release)|dist_release=Nocta-$VERSION|g" /usr/lib/manjaro-tools/util.sh
           sudo sed -i -e "s|dist_codename=\$(get_codename)|dist_codename=\"$CODE_NAME\"|g" /usr/lib/manjaro-tools/util.sh
            
           sudo buildiso ${SCOPE:+-f} -p $EDITION -b $BRANCH -k $KERNEL
